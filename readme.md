@@ -17,7 +17,7 @@ I recommend using `npx` for simplicity.
 
 
 ```bash
-npx wordpress-to-markdown-exporter \
+npx wordpress-to-markdown \
   --url="https://example.com" \
   --username="admin" \
   --password="password" \
