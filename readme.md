@@ -53,3 +53,47 @@ Images are downloaded and saved locally, updating references in the Markdown.
 ## Example output
 
 ![Example output](example-output.png)
+
+
+## Advanced usage
+
+### Custom post types
+
+If you've added custom post types using some third party plugin or so you can use the `--post-type` parameter to specify which post types to export.
+
+```bash
+npx wp-to-markdown \
+  --url="https://example.com" \
+  --username="admin" \
+  --password="password" \
+  --output="path/to/output" \
+  --post-type="custom_post_type"
+```
+
+If you haven't done so already, you will also need to enable accessing this post type via the REST API.
+
+Add this following in the bottom of the `functions.php` file, replacing `your_custom_post_type` with your actual post type:
+
+```php
+function register_custom_post_type() {
+    $args = array(
+        'public' => true,
+        'label'  => 'Your custom post type',
+        'show_in_rest' => true,
+        'rest_base' => 'your_custom_post_type',
+    );
+    register_post_type('your_custom_post_type', $args);
+}
+add_action('init', 'register_custom_post_type');
+```
+
+Example:
+
+```bash
+npx wp-to-markdown \
+  --url http://some.wordpress.com \
+  --username admin \
+  --password 'xxx' \
+  --output listings \
+  --custom-post-type listings
+```

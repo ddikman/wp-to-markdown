@@ -1,3 +1,7 @@
+# 1.1.0
+
+- Added support for custom post types
+
 # 1.0.3
 
 - Added error handling for when the WordPress REST API v2 is not found
