@@ -1,3 +1,9 @@
+# 1.2.0
+
+- Added support for preserving certain tags
+- Formatting tables and other common elements using the turndown plugin
+- Fixing relative image url links
+
 # 1.1.0
 
 - Added support for custom post types

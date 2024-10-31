@@ -23,7 +23,8 @@ npx wp-to-markdown \
   --password="password" \
   --output="path/to/output" \
   --limit=10 \
-  --code-block-class="EnlighterJSRAW"
+  --code-classes="EnlighterJSRAW" \
+  --preserve-tags="iframe,script"
 ```
 
 ### Parameters
@@ -33,18 +34,24 @@ npx wp-to-markdown \
 - `password`: The password for authentication.
 - `output`: The path to the output directory.
 - `limit`: The maximum number of posts to export.
-- `code-block-class`: The class name of the code block to use.
+- `code-classes`: The class name of the code block to use.
+- `preserve-tags`: The HTML tags to preserve as they are.
 
 ### Limiting
 
 If you want to limit the number of posts exported, you can use the `--limit` parameter. This is useful if you want to test the tool or only export a subset of your posts.
 
-### Code Block Class
+### Code Block Classes
 
-If you want to use a custom code block class, you can use the `--code-block-class` parameter. This is useful if you want to use a specific syntax highlighter.
+If you want to use a custom code block class, you can use the `--code-classes` parameter. This is useful if you want to use a specific syntax highlighter.
 
 It's a bit basic and will try to guess the language based on the contents of the code block but it's not perfect, only better than nothing.
 
+### Preserving tags
+
+If you want to preserve certain tags, you can use the `--preserve-tags` parameter.
+
+By default it will preserve `iframe` and `script` tags.
 
 ### Image download
 
