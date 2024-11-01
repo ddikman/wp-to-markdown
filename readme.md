@@ -98,7 +98,7 @@ author: David
 excerpt: >-
   How do you get the innerText when using Scrapy? Short answer is, you don't.
   But by adding BeautifulSoup you can.
-featured_image: null
+featured_image: images/get-the-innertext-of-an-element-in-scrapy/Untitled_Artwork.png
 original_url: https://greycastle.se/get-the-innertext-of-an-element-in-scrapy
 ---
 ```
