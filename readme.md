@@ -22,6 +22,7 @@ npx wp-to-markdown \
   --username="admin" \
   --password="password" \
   --output="path/to/output" \
+  --images-dir="path/to/images" \
   --limit=10 \
   --code-classes="EnlighterJSRAW" \
   --preserve-tags="iframe,script"
@@ -33,6 +34,7 @@ npx wp-to-markdown \
 - `username`: The username for authentication.
 - `password`: The password for authentication.
 - `output`: The path to the output directory.
+- `images-dir`: The path to the images directory.
 - `limit`: The maximum number of posts to export.
 - `code-classes`: The class name of the code block to use.
 - `preserve-tags`: The HTML tags to preserve as they are.

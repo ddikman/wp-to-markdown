@@ -1,3 +1,9 @@
+# 1.3.2
+
+- Added another example plugin
+- Added images-dir option to allow specifying where to save the images
+- Plugins can now process the html and markdown
+
 # 1.3.1
 
 - Fixed issue where featured image was not being downloaded
