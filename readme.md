@@ -36,6 +36,7 @@ npx wp-to-markdown \
 - `limit`: The maximum number of posts to export.
 - `code-classes`: The class name of the code block to use.
 - `preserve-tags`: The HTML tags to preserve as they are.
+- `plugins`: Optional plugins to use.
 
 ### Limiting
 
@@ -57,10 +58,50 @@ By default it will preserve `iframe` and `script` tags.
 
 Images are downloaded and saved locally, updating references in the Markdown.
 
+### Plugins
+
+You can use built-in plugins or add your own. Run them by adding the `--plugins` parameter.
+
+```bash
+npx wp-to-markdown ... --plugins="Yoast"
+```
+
+The built-in plugins are:
+
+- `Yoast`: Extracts the Yoast SEO description as the excerpt.
+
+Want to contribute another one?
+
+To run your own plugins see advanced usage below.
+
 ## Example output
 
 ![Example output](example-output.png)
 
+## Metadata
+
+The articles will include a markdown meta data header section with data taken from the Wordpress post:
+
+```
+---
+title: Get the innerText of an element in Scrapy
+date: '2023-01-18T13:31:19'
+modified: '2023-01-18T13:32:52'
+slug: get-the-innertext-of-an-element-in-scrapy
+status: publish
+categories:
+  - Automation
+tags:
+  - python
+  - scrapy
+author: David
+excerpt: >-
+  How do you get the innerText when using Scrapy? Short answer is, you don't.
+  But by adding BeautifulSoup you can.
+featured_image: null
+original_url: https://greycastle.se/get-the-innertext-of-an-element-in-scrapy
+---
+```
 
 ## Advanced usage
 
@@ -104,3 +145,13 @@ npx wp-to-markdown \
   --output listings \
   --custom-post-type listings
 ```
+
+### Running your own plugins
+
+The built-in plugins are loaded from the `lib/plugins` directory but, you can also add your own simply by adding a `.js` file in the folder you are running the tool from.
+
+The file should export a class with static `name`, `processFrontMatter` and `processPostContent` methods.
+
+Copy the [Yoast plugin](lib/plugins/yoast.js) as a template and modify it to your needs.
+
+If you try to run your plugin and it's not found, check the console will tell you what plugins are loaded. If your plugin does not appear there, chances are it does not match the expected interface or is in the wrong directory.

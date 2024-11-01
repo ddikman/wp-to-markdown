@@ -1,3 +1,8 @@
+# 1.3.0
+
+- Added support for running your own plugins
+- Added featured image
+
 # 1.2.0
 
 - Added support for preserving certain tags
