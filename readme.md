@@ -150,7 +150,7 @@ npx wp-to-markdown \
 
 The built-in plugins are loaded from the `lib/plugins` directory but, you can also add your own simply by adding a `.js` file in the folder you are running the tool from.
 
-The file should export a class with static `name`, `processFrontMatter` and `processPostContent` methods.
+The file should export a class with static `name`, `processFrontMatter`, `processHtml` and `processMarkdown` methods.
 
 Copy the [Yoast plugin](lib/plugins/yoast.js) as a template and modify it to your needs.
 
