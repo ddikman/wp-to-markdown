@@ -155,3 +155,17 @@ The file should export a class with static `name`, `processFrontMatter` and `pro
 Copy the [Yoast plugin](lib/plugins/yoast.js) as a template and modify it to your needs.
 
 If you try to run your plugin and it's not found, check the console will tell you what plugins are loaded. If your plugin does not appear there, chances are it does not match the expected interface or is in the wrong directory.
+
+
+### Running this locally
+
+If you want to troubleshoot or modify the code:
+
+```bash
+yarn install
+yarn link
+```
+
+Now you can call `wp-to-markdown` from anywhere and changes in your local project will be reflected when you run it.
+
+This is how I've been developing the tool.
